@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+@import url('../assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+:root{
+    /* Primary */
+    --light-red: hsl(0, 100%, 67%);
+    --light-red-bg: hsla(0, 100%, 67%, 0.09);
+
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --orangey-yellow-bg: hsla(39, 100%, 56%, 0.09);
+
+    --green-teal: hsl(166, 100%, 37%);
+    --green-teal-bg: hsla(166, 100%, 37%, 0.09);
+
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --cobalt-blue-bg: hsl(234, 85%, 45%,.09);
+
+    /* Gradients */
+    --light-slate-blue-bg: hsl(252, 100%, 67%);
+    --lightroyal-blue-bg: hsl(241, 81%, 54%);
+    --violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --persian-blue-circle: hsla(241, 72%, 46%, 0);
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+    /* wieght */
+    --fw-rgular:500;
+    --fw-bold:700;
+    --fw-extra:800;
+    --main-p-w:1rem
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: var(--pale-blue);
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  p{
+    font-size: 1.125rem;
+  }
+
+  body{
+    height: 100vh;
+    background-color: var(--pale-blue);
+    display: grid;
+    place-content: center;
+    padding: 0 2rem;
+  }
+  @media(max-width:767px){
+    body{
+      display: block;
+      padding: 0;
+    }
+  }
+  main .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 00px;
+    max-width: 690px;
+  }
+  @media(max-width:767px){
+    main .container{
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* start result side */
+  main .container .result{
+    background:linear-gradient(to bottom ,var(--light-slate-blue-bg),var(--lightroyal-blue-bg));
+    text-align: center;
+    padding: 1.3rem 2.4rem;
+    border-radius:30px;
+    color: var(--white);
+  }
+
+  @media(max-width:767px){
+    main .container .result{
+      padding:0 ;
+      border-top-left-radius:0 ;
+      border-top-right-radius:0 ;
+      /* border-radius: 0; */
+      
+     }
+    main .container .smumary{
+      padding: 0 2rem;
+  
+     }
+  }
+  main .container .result>h1{
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    color: var(--pale-blue);
+    margin-bottom: 2rem;
+  }
+  main .container .result .total{
+    padding: 1rem;
+    background: linear-gradient(to bottom,var(--violet-blue-circle)59%,var(--persian-blue-circle));
+    border-radius: 50%;
+    /* border: 1px solid; */
+    width: 170px;
+    height: 170px;
+    margin: auto;
+    font-size: 3.5rem;
+    font-weight: var(--fw-extra);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+  }
+  main .container .result .total span{
+    font-size: 16px;
+    /* display: block; */
+    font-weight: var(--fw-rgular);
+    color: hsl(230deg 8.91% 60.39%);
+  }
+  main .container .result .msg{
+    margin: 1rem 0;
+  }
+  main .container .result .msg  h2{
+    font-size: 1.5rem;
+    margin-bottom: .7rem;
+  }
+  main .container .result .msg  p{
+    color: var(--light-lavender);
+    font-size: 18px;
+    line-height: 1.5;
+      
+  }
+  @media(max-width:767px){
+  main .container .result .msg  p{
+    max-width: 290px;
+    margin: 0rem auto 2.5rem;
+  }
+  }
+  /* end result side*/
+
+  /* start summary side */
+  main .container .smumary{
+    padding: 1.3rem 2.4rem;
+    background-color: var(--white);
+    border-radius:30px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 30px;
+
+
+  }
+  main .container .smumary{
+   
+    display: grid;
+
+}
+  main .container .smumary>h2{
+      color: var(--dark-gray-blue);
+      font-weight: var(--fw-bold);
+      margin-bottom: 1.5rem;
+
+  }
+  main .container .smumary .rates .rate{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light-red-bg);
+    margin-bottom: 10px;
+    padding: 1rem 1rem;
+    border-radius: 20px;
+    color: var(--light-red);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-weight: var(--fw-bold);
+
+  }
+  @media (max-width:290px){
+    main .container .smumary .rates .rate{
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+  main .container .smumary .rates .rate .title{
+    display: flex;
+    gap: 10px;
+  }
+  main .container .smumary .rates .rate>p:last-child::after{
+    content: "  / 100 ";
+    color:hsl(230deg 8.91% 60.39%);
+   
+  }
+
+  main .smumary .rates .rate:nth-child(2){
+    background-color:var(--orangey-yellow-bg) ;
+    color: var(--orangey-yellow);
+  }
+  main .smumary .rates .rate:nth-child(3){
+    background-color:var(--green-teal-bg) ;
+    color: var(--green-teal);
+  }
+  main .smumary .rates .rate:last-child{
+    background-color:var(--cobalt-blue-bg) ;
+    color: var(--cobalt-blue);
+  }
+  
+  .smumary button{
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+    color: var(--white);
+    background-color: var(--dark-gray-blue);
+    font-weight: var(--fw-bold);
+    margin: 1rem 0;
+    cursor: pointer;
+
+  }
+  main .container .smumary .rates .rate>p{
+    color: var(--dark-gray-blue);
+  }
+  .smumary button:hover{
+    background:linear-gradient(to bottom ,var(--light-slate-blue-bg),var(--lightroyal-blue-bg));
+    
+  }
+  /* end summary side */
